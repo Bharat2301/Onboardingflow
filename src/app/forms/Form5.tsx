@@ -35,12 +35,24 @@ const Form5 = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', borderRadius: '20px', border: '2px solid white', padding: '2rem' }}>
-      <h2>Step 5: Preferences</h2>
+    <form 
+      onSubmit={handleSubmit} 
+      style={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        gap: '1rem', 
+        borderRadius: '20px', 
+        border: '2px solid white', 
+        padding: '2rem',
+        backgroundColor: '#87CEEB', // Sky blue background
+        color: 'black' // Black text
+      }}
+    >
+      <h2 style={{ color: 'black' }}>Step 5: Preferences</h2>
       <div>
-        <label>Preferences (select all that apply)</label>
+        <label style={{ color: 'black' }}>Preferences (select all that apply)</label>
         <div>
-          <label>
+          <label style={{ color: 'black' }}>
             <input 
               type="checkbox" 
               name="preferences" 
@@ -48,7 +60,7 @@ const Form5 = () => {
               defaultChecked={formData.preferences.includes('email')} 
             /> Email Updates
           </label>
-          <label>
+          <label style={{ color: 'black' }}>
             <input 
               type="checkbox" 
               name="preferences" 
@@ -56,7 +68,7 @@ const Form5 = () => {
               defaultChecked={formData.preferences.includes('sms')} 
             /> SMS Updates
           </label>
-          <label>
+          <label style={{ color: 'black' }}>
             <input 
               type="checkbox" 
               name="preferences" 
@@ -68,7 +80,7 @@ const Form5 = () => {
         {errors.preferences && <p style={{ color: 'red' }}>{errors.preferences}</p>}
       </div>
       <div>
-        <label>
+        <label style={{ color: 'black' }}>
           <input 
             type="checkbox" 
             name="termsAccepted" 
@@ -78,8 +90,33 @@ const Form5 = () => {
         {errors.termsAccepted && <p style={{ color: 'red' }}>{errors.termsAccepted}</p>}
       </div>
       <div style={{ display: 'flex', gap: '1rem' }}>
-        <button type="button" onClick={handleBack}>Back</button>
-        <button type="submit">Finish</button>
+        <button 
+          type="button" 
+          onClick={handleBack}
+          style={{
+            padding: '0.5rem 2rem',
+            borderRadius: '5px',
+            border: 'none',
+            backgroundColor: '#808080',
+            color: 'white',
+            cursor: 'pointer',
+          }}
+        >
+          Back
+        </button>
+        <button 
+          type="submit"
+          style={{
+            padding: '0.5rem 2rem',
+            borderRadius: '5px',
+            border: 'none',
+            backgroundColor: '#4CAF50',
+            color: 'white',
+            cursor: 'pointer',
+          }}
+        >
+          Finish
+        </button>
       </div>
     </form>
   );

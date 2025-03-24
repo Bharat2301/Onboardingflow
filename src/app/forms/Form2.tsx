@@ -1,4 +1,3 @@
-// Form2.tsx
 'use client';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -37,10 +36,22 @@ const Form2 = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', borderRadius: '20px', border: '2px solid white', padding: '2rem' }}>
-      <h2>Step 2: Educational Details</h2>
+    <form 
+      onSubmit={handleSubmit} 
+      style={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        gap: '1rem', 
+        borderRadius: '20px', 
+        border: '2px solid white', 
+        padding: '2rem',
+        backgroundColor: '#87CEEB', // Sky blue background
+        color: 'black' // Black text
+      }}
+    >
+      <h2 style={{ color: 'black' }}>Step 2: Educational Details</h2>
       <div>
-        <label>Degree</label>
+        <label style={{ color: 'black' }}>Degree</label>
         <input
           name="degree"
           defaultValue={formData.degree}
@@ -54,7 +65,7 @@ const Form2 = () => {
         {errors.degree && <p style={{ color: 'red' }}>{errors.degree}</p>}
       </div>
       <div>
-        <label>University</label>
+        <label style={{ color: 'black' }}>University</label>
         <input
           name="university"
           defaultValue={formData.university}
@@ -68,7 +79,7 @@ const Form2 = () => {
         {errors.university && <p style={{ color: 'red' }}>{errors.university}</p>}
       </div>
       <div>
-        <label>Passing Year</label>
+        <label style={{ color: 'black' }}>Passing Year</label>
         <input
           type="number"
           name="year"

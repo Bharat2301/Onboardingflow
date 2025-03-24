@@ -1,4 +1,3 @@
-// Form4.tsx
 'use client';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -35,7 +34,19 @@ const Form4 = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', borderRadius: '20px', border: '2px solid white', padding: '2rem' }}>
+    <form 
+      onSubmit={handleSubmit} 
+      style={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        gap: '1rem', 
+        borderRadius: '20px', 
+        border: '2px solid white', 
+        padding: '2rem',
+        backgroundColor: '#87CEEB', // Sky blue background
+        color: 'black' // Black text
+      }}
+    >
       <h2 style={{ color: 'black' }}>Step 4: Contact Details</h2>
       <div>
         <label style={{ color: 'black' }}>Phone Number</label>
@@ -68,8 +79,33 @@ const Form4 = () => {
         {errors.emergencyContact && <p style={{ color: 'red' }}>{errors.emergencyContact}</p>}
       </div>
       <div style={{ display: 'flex', gap: '1rem' }}>
-        <button type="button" onClick={handleBack}>Back</button>
-        <button type="submit">Next</button>
+        <button 
+          type="button" 
+          onClick={handleBack}
+          style={{
+            padding: '0.5rem 2rem',
+            borderRadius: '5px',
+            border: 'none',
+            backgroundColor: '#808080',
+            color: 'white',
+            cursor: 'pointer',
+          }}
+        >
+          Back
+        </button>
+        <button 
+          type="submit"
+          style={{
+            padding: '0.5rem 2rem',
+            borderRadius: '5px',
+            border: 'none',
+            backgroundColor: '#4CAF50',
+            color: 'white',
+            cursor: 'pointer',
+          }}
+        >
+          Next
+        </button>
       </div>
     </form>
   );
